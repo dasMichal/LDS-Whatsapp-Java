@@ -62,6 +62,7 @@ public class networkClient2_chat extends networkCore2
         //myThread2.setName("Thread 2");
 
 
+        
         while ((!transmitted) & (trys < 5))
         {
 
@@ -93,8 +94,6 @@ public class networkClient2_chat extends networkCore2
                     dout.writeUTF(eingabe);
                     dout.flush();
 
-
-
                 }
 
 
@@ -102,7 +101,6 @@ public class networkClient2_chat extends networkCore2
                 num++;
 
             }while(!exit);
-
 
             transmitted= true;
             myThread1.interrupt();
@@ -124,7 +122,7 @@ public class networkClient2_chat extends networkCore2
         System.out.println("No Connection.");
         System.out.println("Exiting");
         System.out.print("\033[H\033[2J");
-
+        System.exit(0);
     }
 
 }

@@ -53,9 +53,7 @@ public class backgroundNetwork extends Thread
 			try
 			{
 				data = message.split(",");
-				//System.out.println("\n>>> Message Type: "+messageType);
 				System.out.println(">> " + message);
-				//System.out.println(">>> Player " + data[0] + " Column " + data[1]);
 				System.out.print(">>> \r");
 			} catch (Exception e)
 			{
