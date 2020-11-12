@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.regex.Pattern;
 
 public class networkClient2_chat extends networkCore2
@@ -10,6 +12,8 @@ public class networkClient2_chat extends networkCore2
 
     public static void main(String[] args) throws IOException, InterruptedException
     {
+
+
 
         int port;
         Scanner input = new Scanner(System.in);
@@ -87,6 +91,7 @@ public class networkClient2_chat extends networkCore2
 
                 if (eingabe.equals("exit"))
                 {
+
                     exit=true;
                 }else
                 {
@@ -96,14 +101,17 @@ public class networkClient2_chat extends networkCore2
 
                 }
 
-
-
                 num++;
 
             }while(!exit);
 
             transmitted= true;
+            System.out.println("Hey1");
             myThread1.interrupt();
+
+
+
+            System.out.println("Hey3");
 
         }catch(Exception e)
         {
@@ -112,7 +120,6 @@ public class networkClient2_chat extends networkCore2
             System.out.print("Connection refused. Try:"+trys+"/5\r");
 
             Thread.sleep(2000);
-
         }
 
         }

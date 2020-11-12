@@ -1,11 +1,14 @@
+import java.awt.datatransfer.SystemFlavorMap;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.TreeMap;
+import java.util.concurrent.BlockingQueue;
 
 public class backgroundNetwork extends Thread
 {
+
 	int port ;
 
 	public backgroundNetwork(int port)
@@ -24,11 +27,14 @@ public class backgroundNetwork extends Thread
 			//e.printStackTrace();
 			//System.out.println(e);
 			System.out.println("Server Start ist gestoppt");
+			System.out.println("Die");
+			System.exit(0);
+
 		}
 
 	}
 
-	public static void serverStart(int port) throws IOException {
+	public void serverStart(int port) throws IOException {
 
 		//socket server port on which it will listen
 		ServerSocket server = new ServerSocket(port);
@@ -52,6 +58,8 @@ public class backgroundNetwork extends Thread
 
 			try
 			{
+
+
 				data = message.split(",");
 				System.out.println(">> " + message);
 				System.out.print(">>> \r");
@@ -60,24 +68,23 @@ public class backgroundNetwork extends Thread
 				//System.out.println("oups no splitting");
 			}
 
-
 			//out.close();
 			//in.close();
 			//socket.close();
 
+
 			//terminate the server if client sends exit request
+
 		}
 
 
 
-		
 		//System.out.println("Shutting down Socket server!!");
 		//close the ServerSocket object
 		//server.close();
 
 
 	}
-
 
 
 }
